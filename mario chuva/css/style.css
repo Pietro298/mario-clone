@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border-bottom: 50px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: url("https://media.istockphoto.com/id/695767024/pt/vetorial/rain-and-white-clouds-isolated-on-transparent-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=ChuZlS0rbvt5itRMEm32TpGPywDv1z7RtAkxfoNfyqE=")
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px;
+    animation: pipe-animation 1.4s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 700ms ease-out; /* Padrão: 500ms (menor valor = pulo mais
+rápido) */
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    top: 70px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {right: -80px;}
+    to {right: 100%;}
+}
+
+@keyframes jump {
+    0% { bottom: 0; }
+40% { bottom: 270px; } /* Aumente aqui para um pulo mais alto (padrão: 180px)
+*/
+50% { bottom: 250px; }
+60% { bottom: 260px; }
+100% { bottom: 0; }
+  
+
+}
+
+@keyframes clouds-animation {
+    from {right: -550px;}
+    to {right: 100%;}
+}
+
+nav {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    z-index: 10;
+}
+
+.fases {
+    display: flex;
+    gap: 8px;
+}
+
+.fases button {
+    width: 45px;
+    height: 45px;
+
+    background: #ffffff;
+
+    border: 3px solid #222;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 3px 3px 0 #000;
+}
+
+.fases button:hover {
+    background: #ffe45c;
+    transform: translateY(-3px);
+}
